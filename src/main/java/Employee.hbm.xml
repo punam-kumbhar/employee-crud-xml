@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "https://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="com.punam.hibernate.employee_crud_xml.Employee"
+           table="hibernate_table">
+
+        <id name="id" column="eid">
+            <generator class="assigned"/>
+        </id>
+
+        <property name="name" column="ename"/>
+        <property name="department" column="edepartment"/>
+        <property name="role" column="erole"/>
+        <property name="salary" column="esalary"/>
+
+    </class>
+
+</hibernate-mapping>
