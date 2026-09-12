@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "https://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="com.punam.hibernate.EmployeeComponentMapping.Employee" table="employee_component">
+
+        <id name="id" column="id">
+            <generator class="assigned"/>
+        </id>
+
+        <property name="name" column="name"/>
+        <property name="salary" column="salary"/>
+
+        <component name="address">
+
+            <property name="city" column="city"/>
+            <property name="state" column="state"/>
+            <property name="pincode" column="pincode"/>
+
+        </component>
+
+    </class>
+
+</hibernate-mapping>
