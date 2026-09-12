@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "https://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="com.punam.hibernate.EmployeeInheritanceTablePerClass.Employee"
+           table="employee_tpc">
+
+        <id name="id" column="id">
+            <generator class="assigned"/>
+        </id>
+
+        <property name="name" column="name"/>
+        <property name="salary" column="salary"/>
+
+        <union-subclass
+            name="com.punam.hibernate.EmployeeInheritanceTablePerClass.Manager" table="manager_tpc">
+
+            <property name="department" column="department"/>
+
+        </union-subclass>
+
+        <union-subclass name="com.punam.hibernate.EmployeeInheritanceTablePerClass.Developer" table="developer_tpc">
+
+            <property name="programmingLanguage" column="programming_language"/>
+
+        </union-subclass>
+
+    </class>
+
+</hibernate-mapping>
